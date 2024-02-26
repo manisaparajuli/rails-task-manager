@@ -1,7 +1,14 @@
-<h1>My Tasks</h1>
+<h1 class="font-monospace text-center">My Tasks</h1>
 <% @tasks.each do |task| %>
-  <input type="checkbox"/>
-  <label for="checkbox"><%= link_to task.title, task_path(task)  %></label>
+  <div class="d-block fs-4 text-dark font-monospace text-center bg-success p-2 bg-opacity-25">
+    <input type="checkbox" />
+    <label for="checkbox"><%= link_to task.title, task_path(task)  %></label>
+    <%= link_to(task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"})do  %>
+    <i class="fa-solid fa-trash-can">
+    </i>
+    <% end %>
+
+  </div>
 <% end %>
 <br/>
-<%= link_to "+ Add new task", tasks_new_path %>
+<div class="d-block fs-4 text-dark font-monospace text-center bg-success p-2 bg-opacity-25"><%= link_to "+ Add new task", new_task_path %></div>

@@ -1,10 +1,9 @@
-<h1>My Tasks</h1>
-<p> Task Name: <%= @tasks.title %> </p>
-<p> Task Details: <%= @tasks.details %> </p>
-<p> IsCompleted: <%= @tasks.completed %> </p>
-<%= link_to "Delete",
-  task_path(@tasks),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-<%= link_to "Back to list", tasks_path %> <br/>
-<%= link_to "Edit", edit_task_path %>
+<div class="d-block fs-4 text-dark font-monospace text-center bg-success p-2 bg-opacity-25">
+  <h1>My Tasks</h1>
+  <p> Task Name: <%= @task.title %> </p>
+  <p> Task Details: <%= @task.details %> </p>
+  <p> IsCompleted: <%= @task.completed %> </p>
+
+  <%= link_to "Back to list", tasks_path %> <br/>
+  <%= link_to "Edit", edit_task_path %>
+</div>
